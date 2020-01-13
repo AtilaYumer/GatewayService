@@ -8,6 +8,7 @@ import com.musala.gateway.model.PeripheralDevice;
 
 public interface PeripheralDeviceRepository extends JpaRepository<PeripheralDevice, Integer> {
 
-	List<PeripheralDevice> findByGatewayId(Long id);
+	List<PeripheralDevice> findByGatewayId(Long gatewayId);
+	List<PeripheralDevice> deleteByGatewayId(Long gatewayId);
 
 }

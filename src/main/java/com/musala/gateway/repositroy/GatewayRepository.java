@@ -7,4 +7,5 @@ import com.musala.gateway.model.Gateway;
 public interface GatewayRepository extends JpaRepository<Gateway, Integer> {
 
 	Gateway findBySerialNumber(String serialNumber);
+	Gateway deleteBySerialNumber(String serialNumber);
 }
