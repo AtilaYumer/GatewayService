@@ -6,13 +6,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import com.musala.gateway.model.enumeration.DeviceStatus;
 
@@ -32,7 +28,7 @@ public class PeripheralDevice {
 
 	private DeviceStatus status;
 
-	private Long gateway_id;
+	private Long gatewayId;
 
 	@Column(name = "uid", unique = true)
 	public String getUid() {
@@ -72,11 +68,11 @@ public class PeripheralDevice {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinTable(name = "peripheral_devices_master_gateway")
-	public Long getGateway_id() {
-		return gateway_id;
+	public Long getGatewayId() {
+		return gatewayId;
 	}
 
-	public void setGateway_id(Long gateway_id) {
-		this.gateway_id = gateway_id;
+	public void setGatewayId(Long gatewayId) {
+		this.gatewayId = gatewayId;
 	}
 }

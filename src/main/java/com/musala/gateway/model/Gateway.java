@@ -28,7 +28,7 @@ public class Gateway {
 	@Column(name = "ip", nullable = false)
 	private String ip;
 
-	@OneToMany(targetEntity = PeripheralDevice.class, mappedBy = "gateway_id", fetch = FetchType.EAGER)
+	@OneToMany(targetEntity = PeripheralDevice.class, mappedBy = "gatewayId", fetch = FetchType.EAGER)
 	private List<PeripheralDevice> peripheralDevices;
 
 	public Long getId() {
